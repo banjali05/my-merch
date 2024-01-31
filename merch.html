@@ -1,56 +1,79 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - our team showcase</title>
-  <link href="https://fonts.googleapis.com/css?family=Karla|Yeseva+One" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'><link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchandise Store</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div :class="['container', isSelected ? 'container-selected':'', isReady ? 'container-ready':'']" id="app">
-  <div class="team-container">
-    <div class="header">
-      <br>
-      <h2 class="header-title">Our Team</h2>
-    </div>
-    <div class="person-list">
-      <div class="person" v-for="(person,index) in persons" @click="selectPerson(index,$event)"><img class="person-img" :src="person.photo">
-        <div class="person-details">
-          <h2 class="person-title">{{person.name}}</h2>
-          <p class="person-desc">{{person.title}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="team-detail">
-    <div class="team-detail-inner" v-if="isOk">
-      <div class="team-detail-left" :style=`background-image:url(${selectedPersonData.photo})`>
-        <div class="team-detail-photo"><img :src="selectedPersonData.photo" alt="">
-        </div>
-      </div>
-      <div class="team-detail-right">
-        <div class="team-detail-bio">
-          <div class="team-detail-header">
-            <h2 class="person-title">{{selectedPersonData.name}}</h2>
-            <p class="person-desc">{{selectedPersonData.title}}</p>
-            <div class="social">
-              <a :href="selectedPersonData.social.instagram" target="_blank" class="ion-social-instagram"></a>
-              <a :href="selectedPersonData.social.envelope" target="_blank" class="ion-social-envelope"></a>
+
+    <header>
+        <h1>Merchandise Store</h1>
+    </header>
+
+    <section>
+        <div class="product">
+            <img src="product1.jpg" alt="Product 1">
+            <div>
+                <h2>Product 1</h2>
+                <p>Description of Product 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Price: $19.99</p>
+                <button>Add to Cart</button>
             </div>
-          </div>
-          <div class="team-detail-bio-content" v-html="selectedPersonData.bio">
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js'></script><script  src="./script.js"></script>
+
+        <div class="product">
+            <img src="product2.jpg" alt="Product 2">
+            <div>
+                <h2>Product 2</h2>
+                <p>Description of Product 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Price: $29.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Add more products as needed -->
+
+    </section>
 
 </body>
 </html>
